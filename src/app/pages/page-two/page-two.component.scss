@@ -1,0 +1,10 @@
+.main {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+
+  > .form {
+    width: 100%;
+    border: 1px solid green;
+  }
+}

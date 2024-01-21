@@ -1,0 +1,69 @@
+{
+  "controls": [
+    {
+      "name": "firstName",
+      "label": "First name:",
+      "value": "",
+      "type": "text",
+      "validators": {
+        "required": true,
+        "minLength": 10
+      }
+    },
+    {
+      "name": "lastName",
+      "label": "Last name:",
+      "value": "",
+      "type": "text",
+      "validators": {
+        "required": true
+      }
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "value": "",
+      "type": "textarea",
+      "validators": {}
+    },
+    {
+      "name": "agreeTerms",
+      "label": "This is a checkbox?",
+      "value": "false",
+      "type": "checkbox",
+      "validators": {}
+    },
+    {
+      "name": "size",
+      "label": "",
+      "value": "5",
+      "type": "range",
+      "options": {
+        "min": "0",
+        "max": "100",
+        "step": "1",
+        "icon": "sunny"
+      },
+      "validators": {}
+    },
+    {
+      "name": "lightDark",
+      "label": "Do you like toggles?",
+      "value": "false",
+      "type": "toggle",
+      "validators": {}
+    },
+    {
+      "name": "food",
+      "label": "Foods",
+      "value": "pizza-1",
+      "type": "select",
+      "validators": {},
+      "items": [
+        { "value": "steak-0", "viewValue": "Steak" },
+        { "value": "pizza-1", "viewValue": "Pizza" },
+        { "value": "tacos-2", "viewValue": "Tacos" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <ng-container *ngFor="let control of jsonFormData?.controls">
+    <!-- Input -->
+    <div *ngIf="inputTypes.includes(control.type)" class="form-item">
+      <mat-form-field>
+        <mat-label>{{ control.label }}</mat-label>
+        <input [type]="control.type" matInput [formControlName]="control.name" [value]="control.value">
+      </mat-form-field>
+      <p *ngIf="myForm.controls[control.name].invalid" class="error-message">Error</p>
+    </div>
+
+    <!-- Textarea -->
+    <div *ngIf="control.type === 'textarea'" class="form-item">
+      <mat-form-field>
+        <mat-label>{{ control.label }}</mat-label>
+        <textarea matInput [formControlName]="control.name" [value]="control.value"></textarea>
+      </mat-form-field>
+      <p *ngIf="myForm.controls[control.name].invalid" class="error-message">Error</p>
+    </div>
+
+    <!-- Select -->
+    <div *ngIf="control.type === 'select'" class="form-item">
+      <mat-form-field>
+        <mat-label>{{ control.label }}</mat-label>
+        <mat-select [formControlName]="control.name">
+          <mat-option *ngFor="let food of control.items" [value]="food.value">{{food.viewValue}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <p *ngIf="myForm.controls[control.name].invalid" class="error-message">Error</p>
+    </div>
+
+    <!-- Checkbox -->
+    <div *ngIf="control.type === 'checkbox'" class="form-item">
+      <mat-checkbox [formControlName]="control.name" [checked]="control.value">{{ control.label }}</mat-checkbox>
+    </div>
+
+    <!-- Slider -->
+    <div *ngIf="control.type === 'range'" class="form-item">
+      <mat-slider [min]="control.options?.min" [max]="control.options?.max">
+        <input matSliderThumb [formControlName]="control.name">
+      </mat-slider>
+    </div>
+
+    <!-- Toggle -->
+    <div *ngIf="control.type === 'toggle'" class="form-item">
+      <mat-slide-toggle [formControlName]="control.name" [checked]="control.value">{{ control.name }}</mat-slide-toggle>
+    </div>
+  </ng-container>
+
+  <button mat-flat-button type="submit" color="primary">Submit</button>
+</form>

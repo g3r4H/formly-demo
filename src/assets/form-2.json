@@ -1,0 +1,49 @@
+{
+  "controls": [
+    {
+      "name": "name",
+      "label": "Product name:",
+      "value": "",
+      "type": "text",
+      "validators": {
+        "required": true,
+        "minLength": 5
+      }
+    },
+    {
+      "name": "price",
+      "label": "Unitary Price:",
+      "value": "",
+      "type": "number",
+      "validators": {
+        "required": true
+      }
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "value": "",
+      "type": "textarea",
+      "validators": {}
+    },
+    {
+      "name": "available",
+      "label": "Is available?",
+      "value": "false",
+      "type": "checkbox",
+      "validators": {}
+    },
+    {
+      "name": "category",
+      "label": "Category",
+      "value": "1",
+      "type": "select",
+      "validators": {},
+      "items": [
+        { "value": "1", "viewValue": "Cat 1" },
+        { "value": "2", "viewValue": "Cat 2" },
+        { "value": "3", "viewValue": "Cat 3" }
+      ]
+    }
+  ]
+}
